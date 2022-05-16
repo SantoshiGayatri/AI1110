@@ -1,0 +1,89 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{setspace}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{longtable}
+\usepackage[breaklinks=true]{hyperref}
+
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+    \usepackage{amsmath}
+       
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\def\inputGnumericTable{}
+
+\bibliographystyle{IEEEtran}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+
+\newcommand{\question}{\noindent \textbf{Question: }}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+
+
+\title{AI1110 Assignment III (ICSE Class 12 2018)}
+\author{Santoshi Gayatri (CS21BTECH11036)}
+% make the title area
+
+\begin{document}
+\maketitle
+
+\textbf{Question:} One card is drawn from a well shuffled deck of 52 cards. If each outcome is equally likely, calculate the probability that the card will be
+\begin{enumerate}
+    \item[(i)]  a diamond
+    \item[(ii)] not an ace
+    \item[(iii)] a black card (i.e., a club or, a spade)
+    \item[(iv)] not a diamond
+    \item[(v)] not a black card
+\end{enumerate}
+
+\textbf{Solution:}
+Let X = {0,1,2,3,4} be a random variable representing outcomes of cards drawn from a deck. 
+
+\begin{table}[ht!]
+\centering
+\input{tables/table_assign3.tex}
+\caption{}
+\label{table:table1}
+\end{table}
+
+\begin{enumerate}
+\item[(i)]{Number of diamonds in a deck are 13.\\
+\begin{align} 
+\pr{X=0} = \frac{13}{52} = \frac{1}{4}
+\end{align} }
+\item[(ii)]{ Number of cards which are not ace = 52 - 4 = 48.\\
+\begin{align}
+\pr{X=1} = \frac{48}{52} =\frac{12}{13}
+\end{align}}
+\item[(iii)] { Number of black cards(i.e. club or spade) in a deck are 26.\\
+\begin{align}
+\pr{X=2} = \frac{26}{52} = \frac{1}{2}
+\end{align} }
+\item[(iv)]{Number of cards which are not diamond = 52 - 13 = 39.\\
+\begin{align}
+\pr{X=3} = \frac{39}{52} = \frac{3}{4}
+\end{align}}
+\item[(v)]{Number of  cards that are not black = 52-26 = 26.\\
+\begin{align}
+\pr{X=4} = \frac{26}{52} = \frac{1}{2}
+\end{align}}
+
+\end{enumerate}
+\end{document}
+
