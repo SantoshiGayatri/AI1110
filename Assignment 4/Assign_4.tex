@@ -1,0 +1,79 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\pagestyle{empty}
+\usepackage{setspace}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{longtable}
+\usepackage[breaklinks=true]{hyperref}
+
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+    \usepackage{amsmath}
+       
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\def\inputGnumericTable{}
+
+\bibliographystyle{IEEEtran}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+
+\newcommand{\question}{\noindent \textbf{Question: }}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand*{\permcomb}[4][0mu]{{{}^{#3}\mkern#1#2_{#4}}}
+\newcommand*{\perm}[1][-3mu]{\permcomb[#1]{P}}
+
+\title{AI1110 Assignment 4}
+\author{Santoshi Gayatri (CS21BTECH11036)}
+% make the title area
+
+\begin{document}
+\maketitle
+
+\textbf{Question:} Two numbers are selected at random (without replacement) from the first six positive integers. Let X denote the larger of the two numbers obtained. Find E(X). \\
+                            
+\textbf{Solution:}                           
+Consider first n positive integers. \\
+Number of ways to select two random numbers(without replacement) from the first n positive positive integers = 
+$ \perm{n}{2} = n(n-1)$. \\
+Let X represent the larger of the two numbers obtained. Therefore, X can take the values of $$2,3,4,5\ldots, n.$$
+i.e. \pr{X=i} where i $\in (2,n)$\\[8pt]
+$ \therefore  \pr{X=i} = \displaystyle\frac{2(i-1)}{n(n-1)} $
+
+\begin{align}
+ E(X) &=\sum_{i = 2}^{i = n}X_iP(X_i) \\
+ & = \sum_{i = 2}^{i = n} i \times \frac{2(i-1)}{n(n-1)}\\
+ & = \frac{2}{n(n-1)} \sum_{i = 1}^{i = n} i^2 - \frac{2}{n(n-1)}\sum_{i = 1}^{i = n} i
+\end{align}
+\begin{align}
+	\begin{split}
+		&= \frac{2}{n(n-1)} \times \frac{n(n+1)(2n+1)}{6}
+ \\ 
+ 	&	-\frac{2}{n(n-1)} \times \frac{n(n+1)}{2}
+	\end{split}
+\end{align}	
+	
+\begin{align}
+ & = \frac{2(n+1)}{3}
+\end{align}
+For n = 6, substituting value of 6 in (5), we get\\
+$$\boxed{E(X) = \frac{14}{3} }$$
+
+
+
+\end{document}
